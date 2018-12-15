@@ -28,3 +28,7 @@ Route::get('/karyawan', 'EmployeeController@index')->name('employee');
 Route::post('/karyawan', 'EmployeeController@store');
 Route::post('/karyawan/update/{id}', 'EmployeeController@update');
 Route::post('/karyawan/destroy/{id}', 'EmployeeController@destroy');
+
+Route::get('/absen', 'AttendanceController@index')->name('attendance');
+
+Route::get('/user', 'UserController@index')->name('user');

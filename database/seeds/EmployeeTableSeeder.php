@@ -22,7 +22,7 @@ class EmployeeTableSeeder extends Seeder
         $employee->employee_position = '1';
         $employee->employee_IMEI = '865591032069983';
         $employee->employee_phone = '085815806885';
-        $employee->employee_gender = '0';
+        $employee->employee_gender = 'L';
         $employee->employee_birthDate = '1996-06-11';
         $employee->employee_address = 'jl. bendungan 1135 rt/rw 05/05';
         $employee->employee_city = 'semarang';

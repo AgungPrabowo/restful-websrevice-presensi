@@ -59,7 +59,7 @@
                 </div>
             </div>
 
-            modal
+            
             @foreach($employees as $employee)
             <div class="modal fade" id="editmodal{{$employee['id']}}" tabindex="-1" role="dialog" aria-labelledby="mediummodalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-md" role="document">
@@ -262,7 +262,7 @@
                 <div class="modal-dialog modal-md" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="smallmodalLabel">Hapus Lokasi</h5>
+                            <h5 class="modal-title" id="smallmodalLabel">Hapus Karyawan</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -282,6 +282,84 @@
                                 <button type="submit" class="btn btn-danger">Confirm</button>
                             </div>
                         </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="viewmodal{{$employee['id']}}" tabindex="-1" role="dialog" aria-labelledby="mediummodalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="mediummodalLabel">Lihat Karyawan</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="top-campaign">
+                                <div class="table-responsive">
+                                    <table class="table table-top-campaign">
+                                        <tbody>
+                                            <tr>
+                                                <td>1. Nama</td>
+                                                <td>{{$employee['employee_firstName']}} {{$employee['employee_lastName']}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2. Posisi</td>
+                                                <td>{{strtoupper($positions[$employee['employee_position']])}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3. Email</td>
+                                                <td>{{$employee->users->find($employee['user_id'])->email}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4. Lokasi Kerja</td>
+                                                <td>{{$employee->location->find($employee['location_id'])->location_name}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5. KTP</td>
+                                                <td>{{$employee['employee_ktp']}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6. IMEI</td>
+                                                <td>{{$employee['employee_IMEI']}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7. Phone</td>
+                                                <td>{{$employee['employee_phone']}}</td>
+                                            </tr>
+                                            <tr>
+                                                @php
+                                                    $gender = $employee['employee_gender'] == 'L' ? 'Laki-Laki' : 'Perempuan';
+                                                @endphp
+                                                <td>8. Kelamin</td>
+                                                <td>{{$gender}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9. Tanggal Lahir</td>
+                                                <td>{{$employee['employee_birthDate']}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10. Alamat</td>
+                                                <td>{{$employee['employee_address']}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11. Kota</td>
+                                                <td>{{$employee['employee_city']}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>12. Provinsi</td>
+                                                <td>{{$employee['employee_region']}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>13. Agama</td>
+                                                <td>{{$religions[$employee['employee_religion']]}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -400,8 +478,8 @@
                                         </div>
                                         <select name="gender" class="form-control">
                                             <option value="">Pilih Jenis Kelamin</option>
-                                            <option value="laki-laki">Laki-Laki</option>
-                                            <option value="perempuan">Perempuan</option>
+                                            <option value="L">Laki-Laki</option>
+                                            <option value="P">Perempuan</option>
                                         </select>
                                     </div>
                                 </div>

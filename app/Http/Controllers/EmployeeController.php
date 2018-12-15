@@ -22,7 +22,7 @@ class EmployeeController extends Controller
         $users     = User::all();
         $roles     = Role::all();
         $religions = array('Islam','Kristen','Katolik','Hindu','Budha','Khong Hu Cu');
-        $genders   = array('Laki-Laki','Perempuan');
+        $genders   = ['L'=>'Laki-Laki','P'=>'Perempuan'];
         $positions = array('admin','teknisi');
 
         return view('employee', compact('employees', 'locations', 'users', 'roles','religions','genders','positions'));

@@ -14,12 +14,16 @@
                                     <i class="far fa-check-square"></i>Daftar Kantor</a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{ route('attendance') }}">
                                     <i class="fas fa-chart-bar"></i>Daftar Absen</a>
                             </li>
                             <li>
                                 <a href="{{ route('employee') }}">
                                     <i class="fas fa-table"></i>Daftar Karyawan</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('user') }}">
+                                    <i class="fas fa-table"></i>Daftar User</a>
                             </li>
                                 </ul>
                             </li>

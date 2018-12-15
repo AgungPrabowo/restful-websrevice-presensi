@@ -24,7 +24,7 @@ class CreateEmployeesTable extends Migration
             $table->string('employee_position');
             $table->string('employee_IMEI');
             $table->string('employee_phone');
-            $table->enum('employee_gender', array('Laki-Laki', 'Perempuan'));
+            $table->enum('employee_gender', array('L', 'P'));
             $table->string('employee_birthDate');
             $table->string('employee_address');
             $table->string('employee_city');

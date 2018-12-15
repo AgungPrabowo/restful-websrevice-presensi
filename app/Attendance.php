@@ -18,4 +18,9 @@ class Attendance extends Model
     {
         return $this->belongsTo(Location::class);
     }
+
+    public function employee()
+    {
+        return $this->belongsTo('App\Employee', 'employee_id');
+    }
 }
